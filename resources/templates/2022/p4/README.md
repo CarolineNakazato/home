@@ -2,19 +2,6 @@
 
 O objetivo geral do projeto é, a partir de uma classificador treinado em imagens de ressonância do cérebro para diferenciar lesões isquêmicas e desmielinizantes, identificar qual a etiologia mais provável das lesões presentes em pacientes de Lúpus Eritematoso Sistêmico (LES).
 
-A equipe pode usar qualquer tipo de classificador para a tarefa, desde o SVM já treinado e entregue na Atividade 11, como outro classificador baseado ou não em DL. Os dados de teste não devem ser incorporados no treinamento do classificador.
-
-O conjunto de dados de lesões de pacientes de LES foram compartilhados pelo Google Drive (link nas instruções do P4 no Classroom).
-
-Para o processamento dos dados e treinamento do classificador, sugere-se usar notebooks (e.g., Jupyter).
-
-## Instruções para o Relatório Final
-
-Segue abaixo o modelo de como deve ser documentada a entrega.
-> Tudo o que aparece neste modo de citação, ou indicado entre `<...>`, se refere a algo que deve ser substituído pelo indicado. No modelo são colocados exemplos ilustrativos, que serão substituídos pelos do seu projeto.
-
-Se o relatório for feito em um notebook, o modelo a seguir pode ser colocado dentro do notebook diretamente. Nesse caso, coloque no markdown do projeto (fora do notebook) uma cópia dos dados até a seção de `Apresentação` e um link para o notebook com o relatório.
-
 # Modelo Relatório Final de Projeto P4
 
 # Projeto Classificação de lesões de substância branca no Lúpus
@@ -24,24 +11,21 @@ Se o relatório for feito em um notebook, o modelo a seguir pode ser colocado de
 
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://ds4h.org), oferecida no primeiro semestre de 2022, na Unicamp.
 
-> Incluir nome RA e foco de especialização de cada membro do grupo. Os grupos devem ter no máximo 3 integrantes.
->
-> | Nome1  | 123456  | Saúde|
+
 > | CAROLINE NAKAZATO  | 168913  | Computação|
-> | Nome3  | 123456  | XXX|
 
 # Introdução
 > Apresentação de forma resumida do problema (contexto) e a pergunta que se quer responder.
 
 ## Ferramentas
 > Listagem das ferramentas utilizadas (na forma de itens).
-→ Google Colab
-→ ython syntax
-→ Pandas library for data frame
-→ Support vector Machine(svm) from sklearn (a.k.a scikit-learn) library
-→ GridSearchCV
-→ skimage library for reading the image
-→ matplotlib for visualization purpose
+* Google Colab
+* ython syntax
+* Pandas library for data frame
+* Support vector Machine(svm) from sklearn (a.k.a scikit-learn) library
+* GridSearchCV
+* skimage library for reading the image
+* matplotlib for visualization purpose
 
 ## Preparo e uso dos dados
 
@@ -54,8 +38,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Metodologia
-> Descreva o classificador escolhido e o pipeline de treinamento:
-Existem inúmeras aplicações de aprendizado de máquina, das quais a Classificação de Imagens é uma delas. Para classificar imagens, aqui estamos usando SVM. Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python e a Support vector machine(SVM) está incluída no Scikit-learn.
+Para classificar imagens, estamos usando SVM. Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python e a Support vector machine(SVM) está incluída no Scikit-learn.
 Alguns dos principais parâmetros no SVM são:
 → Gamma : define até que ponto a influência de exemplos de treinamento individuais atinge valores que levam a resultados tendenciosos.
 
@@ -98,11 +81,9 @@ O modelo é treinado usando dados de treinamento dessa maneira
 → model.fit(dados_treinamento,saída_esperada)
 
 Usei o GridSearchCV para descobrir os melhores parâmetros para o SVM classificar as imagens e medir a precisão do modelo.
-* split dos dados de treinamento
-* escolha de parâmetros do classificador
-* validação cruzada
-* métricas de avaliação
-* resultados do treinamento do classificador usando tabelas e gráficos
+
+Resultados do treinamento do classificador
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.png)
 >
 > Justificar as escolhas.
 > Esta parte do relatório pode ser copiada da Atividade 11, caso o grupo opte por usar o SVM já treinado.
@@ -123,6 +104,6 @@ Usei o GridSearchCV para descobrir os melhores parâmetros para o SVM classifica
 > * o que poderia ser melhorado se houvesse mais tempo?
 
 # Referências Bibliográficas
-> Lista de artigos, links e referências bibliográficas (se houver).
->
-> Fiquem à vontade para escolher o padrão de referenciamento preferido pelo grupo.
+> https://scikit-learn.org/stable/modules/svm.html
+> https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
+> https://scikit-learn.org/stable/modules/grid_search.html
