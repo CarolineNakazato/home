@@ -17,8 +17,8 @@ Se o relatório for feito em um notebook, o modelo a seguir pode ser colocado de
 
 # Modelo Relatório Final de Projeto P4
 
-# Projeto `<Título em Português>`
-# Project `<Title in English>`
+# Projeto Classificação de lesões de substância branca no Lúpus
+# Project Classification of white matter lesions in lupus
 
 # Apresentação
 
@@ -26,10 +26,8 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 > Incluir nome RA e foco de especialização de cada membro do grupo. Os grupos devem ter no máximo 3 integrantes.
 >
-> |Nome  | RA | Especialização|
-> |--|--|--|
 > | Nome1  | 123456  | Saúde|
-> | Nome2  | 123456  | Computação|
+> | CAROLINE NAKAZATO  | 168913  | Computação|
 > | Nome3  | 123456  | XXX|
 
 # Introdução
@@ -37,6 +35,13 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 ## Ferramentas
 > Listagem das ferramentas utilizadas (na forma de itens).
+→ Google Colab
+→ ython syntax
+→ Pandas library for data frame
+→ Support vector Machine(svm) from sklearn (a.k.a scikit-learn) library
+→ GridSearchCV
+→ skimage library for reading the image
+→ matplotlib for visualization purpose
 
 ## Preparo e uso dos dados
 
@@ -50,6 +55,49 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 # Metodologia
 > Descreva o classificador escolhido e o pipeline de treinamento:
+Existem inúmeras aplicações de aprendizado de máquina, das quais a Classificação de Imagens é uma delas. Para classificar imagens, aqui estamos usando SVM. Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python e a Support vector machine(SVM) está incluída no Scikit-learn.
+Alguns dos principais parâmetros no SVM são:
+→ Gamma : define até que ponto a influência de exemplos de treinamento individuais atinge valores que levam a resultados tendenciosos.
+
+→ C : Controla o custo de erros de cálculo
+C pequeno — torna BAIXO o custo da classificação incorreta
+Grande C — torna o custo da classificação errada ALTO
+
+→ Kernel : Os algoritmos SVM usam um conjunto de funções matemáticas que são definidas como o kernel.
+Os tipos de Kernels são: Linear, RBF (Função de Base Radial), Kernel Polinomial
+
+GridSearchCV
+É uma função de biblioteca que é membro do pacote model_selection do sklearn. Ele ajuda a percorrer hiperparâmetros predefinidos e ajustar seu estimador (modelo) em seu conjunto de treinamento. Assim, no final, você pode selecionar os melhores parâmetros dos hiperparâmetros listados.
+
+Processo
+É uma das formas de aprendizado de máquina onde o modelo é treinado por dados de entrada e dados de saída esperados.
+Para criar tal modelo, é necessário passar pelas seguintes fases:
+
+1. Recebendo informações
+2. Construção do modelo
+3. Treinamento do modelo
+4. Teste de modelo
+5. Avaliação do modelo
+
+Tomando entrada: 3 categorias diferentes de imagens (AVC, EM e SLE) são lidas e rotuladas como 0,1,2.
+
+Como o SVM recebe entradas do mesmo tamanho, todas as imagens precisam ser redimensionadas para um tamanho fixo antes de serem inseridas no SVM. df é o quadro de dados criado usando pandas e xey são dados de entrada e saída, respectivamente
+
+Construção do modelo: Neste caso de projeto, o modelo é uma máquina de vetores de suporte.
+O algoritmo para construção do modelo é assim:
+
+1. Crie um support vector classifier:
+→ svc=svm.SVC()
+
+2. Com a ajuda de GridSearchCV e grade de parâmetros, crie um modelo: 
+→model=GridSearchCV(svc,parameters_grid)
+
+Treinamento do modelo: Os dados são divididos em duas categorias: dados de treinamento e dados de teste. Os dados de treinamento são usados para treinar o modelo, enquanto os dados de teste são usados para testar o modelo treinado.
+Para dividir os dados em treinamento e teste, é usado train_test_split() da biblioteca sklearn.
+O modelo é treinado usando dados de treinamento dessa maneira
+→ model.fit(dados_treinamento,saída_esperada)
+
+Usei o GridSearchCV para descobrir os melhores parâmetros para o SVM classificar as imagens e medir a precisão do modelo.
 * split dos dados de treinamento
 * escolha de parâmetros do classificador
 * validação cruzada
