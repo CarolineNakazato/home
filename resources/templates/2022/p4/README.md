@@ -28,14 +28,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 * matplotlib for visualization purpose
 
 ## Preparo e uso dos dados
-
-> Descreva o pipeline de pré-processamento dos dados:
-* normalização (se houver)
-* outros processamentos
-* uso das máscaras (se houver)
-* extração de atributos (se houver)
-* seleção de atributos (se houver)
-
+Todas as imagens foram  redimensionadas para um tamanho fixo.
 
 # Metodologia
 Para classificar imagens, estamos usando SVM. Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python e a Support vector machine(SVM) está incluída no Scikit-learn.
@@ -82,12 +75,16 @@ O modelo é treinado usando dados de treinamento dessa maneira
 
 Usei o GridSearchCV para descobrir os melhores parâmetros para o SVM classificar as imagens e medir a precisão do modelo.
 
-Resultados do treinamento do classificador
+>Resultados do treinamento do classificador
+>
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.png)
 >
-> Justificar as escolhas.
-> Esta parte do relatório pode ser copiada da Atividade 11, caso o grupo opte por usar o SVM já treinado.
-
+> Tabela 1: Comparação de amostra dos dados presvistos com os dados reais
+> O modelo tem 97.5609756097561% de acurácia.
+>
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.2.png)
+>
+> Tabela 2: Dicionário das métricas de avaliação do gridsearch. A coluna "rank_test_score classifica todas as combinações de parâmetros pelos valores de "mean_test_score"
 # Resultados Obtidos e Discussão
 > Esta seção deve apresentar o resultado de predição das lesões de LES usando o classificador treinado. Também deve tentar explicar quais os atributos relevantes usados na classificação obtida
 > * apresente os resultados de forma quantitativa e qualitativa
@@ -101,7 +98,8 @@ Resultados do treinamento do classificador
 > Principais lições aprendidas.
 >
 > Trabalhos Futuros:
-> * o que poderia ser melhorado se houvesse mais tempo?
+> Poderia ser feito normalização, uso das máscaras e outros pré-processamentos, uma melhor divisão dos dados de treino e dos dados de teste e também seria interessante utilizar de outros métodos de classifição para observar seus desempenho em relação a acurácia e ao tempo de processamento.
+
 
 # Referências Bibliográficas
 > https://scikit-learn.org/stable/modules/svm.html
