@@ -83,11 +83,15 @@
 > É uma das formas de aprendizado de máquina onde o modelo é treinado por dados de entrada e dados de saída esperados.
 Para criar tal modelo, é necessário passar pelas seguintes fases:
 >
-> 1. Recebendo informações
-> 2. Construção do modelo
-> 3. Treinamento do modelo
-> 4. Teste de modelo
-> 5. Avaliação do modelo
+> 1. Recebendo informações;
+> 
+> 2. Construção do modelo;
+> 
+> 3. Treinamento do modelo;
+> 
+> 4. Teste de modelo;
+> 
+> 5. Avaliação do modelo;
 > 
 > Tomando entrada: 2 categorias diferentes de imagens (AVC e EM) são lidas e rotuladas como 0,1 respectivamente.
 > 
@@ -100,6 +104,7 @@ Para criar tal modelo, é necessário passar pelas seguintes fases:
 > 1. Crie um support vector classifier:
 > 
 > → svc=svm.SVC()
+>
 >
 > 2. Com a ajuda de GridSearchCV e grade de parâmetros, crie um modelo: 
 > 
@@ -126,8 +131,10 @@ Para criar tal modelo, é necessário passar pelas seguintes fases:
 >
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.png)
 >
-> Tabela 2: Comparação de amostra dos dados presvistos com os dados reais
->
+> Tabela 2: Comparação de amostra dos dados previstos com os dados reais.
+> 
+> A Tabela faz a comparação dos dados previstos com os dados reais e as células em vermelho marcam 2 lesões que foram previstas de forma incorreta. Foi previsto como AVC, mas era EM.
+> 
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/matriz%20de%20confusao.png)
 >
 > Tabela 3: Matriz de confusão
@@ -141,9 +148,12 @@ Para criar tal modelo, é necessário passar pelas seguintes fases:
 > Assim, o modelo:
 >
 > Previu AVC 29 vezes corretamente;
+> 
 > Previu EM 28 vezes corretamente;
+> 
 > Previu EM 2 vez incorretamente, quando na realidade era AVC;
->
+>  
+>  
 > A seguir, analisaremos algumas informações úteis que podemos tirar da matriz de condusão.
 >
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.3.png)
