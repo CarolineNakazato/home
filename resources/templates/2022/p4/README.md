@@ -1,6 +1,6 @@
 # Projeto 4 – Classificação de lesões de substância branca no Lúpus
 
-> O objetivo geral do projeto é, a partir de uma classificador treinado em imagens de ressonância do cérebro para diferenciar lesões isquêmicas e desmielinizantes, identificar qual a etiologia mais provável das lesões presentes em pacientes de Lúpus Eritematoso Sistêmico (LES).
+> O objetivo geral do projeto é, a partir de um classificador treinado com imagens de ressonância do cérebro para diferenciar lesões isquêmicas e desmielinizantes, identificar qual a etiologia mais provável das lesões presentes em pacientes de Lúpus Eritematoso Sistêmico (LES).
 
 # Modelo Relatório Final de Projeto P4
 
@@ -14,20 +14,20 @@
 > | CAROLINE NAKAZATO  | 168913  | Computação|
 
 # Introdução
-> O Lúpus Eritematoso Sistêmico (LES ou apenas lúpus) é uma doença inflamatória crônica de origem autoimune, cujos sintomas podem surgir em diversos órgãos de forma lenta e progressiva (em meses) ou mais rapidamente (em semanas) e variam com fases de atividade e de remissão.
+> O Lúpus Eritematoso Sistêmico (LES, ou apenas lúpus) é uma doença inflamatória crônica de origem autoimune, cujos sintomas podem surgir em diversos órgãos de forma lenta e progressiva (em meses) ou mais rapidamente (em semanas) e variam com fases de atividade e de remissão.
 > 
 > Pacientes com lúpus apresentam risco aumentado para doenças cerebrovasculares do tipo AVC, principalmente com lesões isquêmicas, que ocorrem em idades mais jovens do que o habitual.
 > 
-> Pesquisas feitas por Johnson e Richardson já definiram as manifestações do lúpus no sistema nervoso como parte integral da doença. As manifestações neuropsiquiátricas são as manifestações que envolvem alterações do humor ou comportamento e podem estar presentes em 50% dos pacientes. São elas:
+> Pesquisas feitas por Johnson e Richardson já definiram as manifestações do lúpus no sistema nervoso como parte integral da doença. As manifestações neuropsiquiátricas são as manifestações que envolvem alterações do humor ou comportamento, e podem estar presentes em 50% dos pacientes. São elas:
 >
 > * Disfunção executiva, com problemas de atenção, memória e aprendizado;
-> * Transtornos de humor como depressão, TOC, paranoia e Transtorno de Déficit de Atenção e Hiperatividade
-> * Dores de cabeça persistentes, enxaqueca que não respondem a analgésicos
+> * Transtornos de humor como depressão, TOC, paranoia, Transtorno de Déficit de Atenção e Hiperatividade;
+> * Dores de cabeça persistentes, enxaqueca que não respondem a analgésicos;
 > * Formas menos comuns de Lúpus no sistema nervoso são neuropatia craniana, convulsões e até meningites que requerem diagnóstico rápido e tratamento imediato.
 > 
 > Os mecanismos relacionados ao envolvimento neurológico no lúpus ainda não estão completamente esclarecidos. Entretanto, algumas evidências apontam lesões dos pequenos vasos cerebrais ou presença de anticorpos atingindo diretamente as conexões neuronais.
 >
-> O lúpus cerebral se manifestando com AVC pode sinalizar descontrole da doença. Nem todos os pacientes com LES apresentarão AVC, os pacientes com doença controlada e que cuidam da sua saúde conseguem minimizar essa chance.
+> O lúpus cerebral se manifestando com AVC pode sinalizar descontrole da doença. Nem todos os pacientes com LES apresentarão AVC; os pacientes com doença controlada e que cuidam da sua saúde conseguem minimizar essa chance.
 > 
 > O risco aumentado para AVC no lúpus está associado a:
 > 
@@ -40,7 +40,7 @@
 >
 > Já a síndrome desmielinizante descreve uma doença que afeta diretamente a bainha de mielina, com relativa preservação dos axônios. Clinicamente, a síndrome desmielinizante apresenta-se com sintomas variados, incluindo alteração sensorial, perda de visão e disartria (fala embolada).
 > 
-> Em pacientes com lúpus, o principal desafio consiste no diagnóstico diferencial com outras doenças desmielinizantes do sistema nervoso central incluindo a Esclerose Múltipla.
+> Em pacientes com lúpus, o principal desafio consiste no diagnóstico diferencial com outras doenças desmielinizantes do sistema nervoso central, incluindo a Esclerose Múltipla.
 > 
 > As características imunológicas de ambas as doenças, o padrão remitente-recorrente, as manifestações neurológicas e a presença de lesões da mielina podem dificultar sua distinção.
 > 
@@ -53,18 +53,18 @@
 ## Ferramentas
 > Listagem das ferramentas utilizadas (na forma de itens).
 * Google Colab
-* ython syntax
+* Python syntax
 * Pandas library for data frame
 * Support vector Machine(svm) from sklearn (a.k.a scikit-learn) library
 * GridSearchCV
 * skimage library for reading the image
-* matplotlib for visualization purpose
+* matplotlib for visualization purposes
 
 ## Preparo e uso dos dados
 > Todas as imagens foram  redimensionadas para um tamanho fixo.
 
 # Metodologia
-> Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python e a Support vector machine(SVM) está incluída no Scikit-learn. Para classificar as imagens, estamos usando SVM.
+> Scikit-learn é uma biblioteca de aprendizado de máquina de software livre para a linguagem de programação Python, e a Support vector machine(SVM) está incluída no Scikit-learn. Para classificar as imagens, foi utilizado SVM.
 > 
 > Alguns dos principais parâmetros no SVM são:
 > 
@@ -100,7 +100,7 @@
 > 
 > Recebendo informações: 2 categorias diferentes de imagens de ressonância do cerébro, lesões isquêmicas (AVC - Acidente Vascular Cerebral) e desmielinizantes (EM - Esclerose Múltipla) são lidas e rotuladas como 0 e 1 respectivamente.
 > 
-> Como o SVM recebe apenas entradas do mesmo tamanho, todas as imagens precisam ser redimensionadas para um tamanho fixo antes de serem inseridas no SVM. 'df' é o quadro de dados criado usando pandas e x e y são dados de entrada e saída, respectivamente
+> Como o SVM recebe apenas entradas do mesmo tamanho, todas as imagens precisam ser redimensionadas para um tamanho fixo antes de serem inseridas no SVM. 'df' é o quadro de dados criado usando pandas, e x e y são dados de entrada e saída, respectivamente.
 > 
 > Construção do modelo:
 > 
@@ -111,15 +111,15 @@
 > → svc=svm.SVC()
 >
 >
-> 2. Com a ajuda de GridSearchCV e grade de parâmetros foi criado um modelo: 
+> 2. Com a ajuda do GridSearchCV e a grade de parâmetros, foi criado um modelo: 
 > 
 > → model=GridSearchCV(svc,parameters_grid)
 > 
 > Treinamento do modelo: Os dados são divididos em duas categorias, dados de treinamento e dados de teste. Os dados de treinamento são usados para treinar o modelo, enquanto os dados de teste são usados para testar o modelo treinado.
 > 
-> Para dividir os dados em treinamento e teste, é usado train_test_split() da biblioteca sklearn.
+> Para dividir os dados em treinamento e teste, é utilizada a função train_test_split() da biblioteca sklearn.
 > 
-> O modelo é treinado usando dados de treinamento dessa maneira
+> O modelo é treinado usando dados de treinamento dessa maneira:
 > 
 > → model.fit(dados_treinamento,saída_esperada)
 >
@@ -138,17 +138,17 @@
 >
 > Tabela 2: Comparação de amostra dos dados previstos com os dados reais.
 > 
-> A Tabela 2 faz a comparação dos dados previstos com os dados reais e as células em vermelho marcam 2 lesões que foram previstas de forma incorreta. Foi previsto como lesões isquêmicas (AVC), mas era lesões desmielinizantes (EM).
+> A Tabela 2 faz a comparação dos dados previstos com os dados reais, e as células em vermelho marcam 2 lesões que foram previstas de forma incorreta. Foram previstas como lesões isquêmicas (AVC), mas eram lesões desmielinizantes (EM).
 > 
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/matriz%20de%20confusao.png)
 >
 > Tabela 3: Matriz de confusão
 >
-> A tabela 3 que mostra as frequências de classificação para cada classe do modelo.
+> A tabela 3 mostra as frequências de classificação para cada classe do modelo.
 > 
-> Verdadeiro positivo (VP ou TP) ocorre quando a lesão que estamos buscando foi prevista corretamente e Falso verdadeiro (VN ou TN) ocorre quando  a lesão que não estamos buscando prever foi prevista corretamente.
+> Um Verdadeiro Positivo (VP ou TP) ocorre quando a lesão que estamos buscando foi prevista corretamente, e Falso Verdadeiro (VN ou TN) ocorre quando  a lesão que não estamos buscando prever foi prevista corretamente.
 >
-> Já o falso positivo (false positive — FP) ocorre quando  o tipo da lesão que estamos buscando prever foi prevista incorretamente e o falso negativo (false negative — FN) ocorre quando a lesão que não estamos buscando prever foi prevista incorretamente. 
+> Já o Falso Positivo (False Positive — FP) ocorre quando  o tipo da lesão que estamos buscando prever foi prevista incorretamente, e o Falso Negativo (False Negative — FN) ocorre quando a lesão que não estamos buscando prever foi prevista incorretamente. 
 >
 > Assim, o modelo:
 >
@@ -156,7 +156,7 @@
 > 
 > Previu lesões de EM 28 vezes corretamente;
 > 
-> Previu leões de EM 2 vez incorretamente, quando na realidade eram lesões de AVC;
+> Previu leões de EM 2 vezes incorretamente, quando na realidade eram lesões de AVC;
 >  
 >  
 > A seguir, analisaremos algumas informações úteis que podemos tirar da matriz de confusão.
@@ -165,21 +165,21 @@
 >
 > Tabela 5: Tabela de métricas do modelo.
 >
-> * Acurácia: revela quanto o modelo acertou das previsões. No contexto acima, o modelo teve uma acurácia de 96.61016949152543%. A acurácia é a razão entre o somatório das previsões corretas (verdadeiros positivos com verdadeiros negativos) sobre o somatório das previsões.
+> * Acurácia: revela quanto o modelo acertou das previsões. No contexto acima, o modelo teve uma acurácia de, aproximadamente, 96.61%. A acurácia é a razão entre o somatório das previsões corretas (verdadeiros positivos com verdadeiros negativos) sobre o somatório das previsões totais.
 >
 > * Recall: mostra quão bom o modelo é para prever positivos, sendo positivo entendido como a classe que se quer prever. É definido como a razão entre verdadeiros positivos sobre a soma de verdadeiros positivos com falsos negativos.
 >
-> * Precisão: é a proporção de identificações positivas foi realmente correta. Em outras palavras, o qual bem o modelo trabalhou.
+> * Precisão: é a proporção de identificações positivas que foram realmente corretas. Em outras palavras, o qual bem o modelo trabalhou.
 >
-> * F1-score: Já o f-score nos mostra o balanço entre a precisão e o recall do modelo. 
+> * F1-score: Já o F1-score nos mostra o balanço entre a precisão e o recall do modelo. 
 >
-> * Macro Average:  é calculada usando a média aritmética de todas os f1-score por classe. Esse método trata todas as classes igualmente, independentemente de seus valores de suport.
+> * Macro Average:  é calculada usando a média aritmética de todas os F1-score por classe. Esse método trata todas as classes igualmente, independentemente de seus valores de suport.
 > 
-> * Weighted Average: é calculada tomando a média de todas os f1-score por classe, considerando o suporte de cada classe.
+> * Weighted Average: é calculada tomando a média de todas os F1-score por classe, considerando o suporte de cada classe.
 > 
 > * Support: refere-se ao número de ocorrências reais da classe no conjunto de dados.
 > 
-> * Micro Average:  calcula uma média global do f1-score contando as somas dos verdadeiros positivos, falsos negativos e falsos positivos.
+> * Micro Average:  calcula uma média global do F1-score, contando as somas dos verdadeiros positivos, falsos negativos e falsos positivos.
 >
 # Resultados Obtidos e Discussão
 >
@@ -193,31 +193,31 @@
 >
 > Imagem 2: Predição de uma lesão de AVC feita incorretamente.
 >
-> Já a imagem 2 mostra um predição incorretta, o modelo previu que era uma lesão desmielinizantes (EM), porém era uma lesão isquêmicas (AVC). Quando o modelo erra ele aprende com seu erro, os corrige e não repete o mesmo erro novamente.
+> Já a imagem 2 mostra uma predição incorreta. Nela, o modelo previu que seria uma lesão desmielinizantes (EM), porém era uma lesão isquêmicas (AVC). Quando o modelo erra ele aprende com seu erro, os corrige, e não repete o mesmo erro novamente.
 >
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.5.png)
 >
 > Imagem 3: Gráfico AUC ROC.
 >
-> Na imagem 3 temos um gráfico AUC ROC (Area Under the Curve Receiver Operating Characteristics) é usado para visualizar o desempenho de um modelo entre sensibilidade e especificidade. A sensibilidade refere-se à capacidade de identificar corretamente as entradas que se enquadram no tipo correto da lesão. A especificidade refere-se à capacidade de identificar corretamente as entradas que se enquadram em um verdadeiro negativo. Dito de outra forma, um gráfico AUC ROC identifica quão bem o modelo é capaz de distinguir entre as classes.
+> Na imagem 3 temos um gráfico AUC ROC (Area Under the Curve Receiver Operating Characteristics), usado para visualizar o desempenho de um modelo entre sensibilidade e especificidade. A sensibilidade refere-se à capacidade de identificar corretamente as entradas que se enquadram no tipo correto da lesão. A especificidade refere-se à capacidade de identificar corretamente as entradas que se enquadram em um Verdadeiro Negativo. Dito de outra forma, um gráfico AUC ROC identifica quão bem o modelo é capaz de distinguir entre as classes.
 > 
-> Uma pontuação AUC de 1 significa que o modelo pode distinguir com precisão entre as lesões 100% das vezes. Uma pontuação de 0,5 significa que o modelo não pode determinar entre os tipo de lesão, o que não ocorreu neste modelo. A curva ROC é o gráfico da taxa de verdadeiros positivos do modelo em relação à taxa de falsos positivos.
+> Uma pontuação AUC de 1 significa que o modelo pode distinguir com precisão entre as lesões 100% das vezes. Uma pontuação de 0,5 significa que o modelo não pode determinar entre os tipo de lesão, o que não ocorreu neste modelo. A curva ROC é o gráfico da taxa de Verdadeiros Positivos do modelo em relação à taxa de Falsos Positivos.
 > 
-> Portanto podemos concluir que o modelo consegue distinguir de forma razoável (AUC = 0.94) os tipos de lesões de AVC e EM, porém ainda possui dificuldades e não é 100% preciso em sua previsão.
+> Portanto, podemos concluir que o modelo consegue distinguir de forma razoável (AUC = 0.94) os tipos de lesões de AVC e EM. Porém, ainda possui dificuldades, e não é 100% preciso em sua previsão.
 > 
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.4.png)
 >
 > Imagem 4: Predição de uma lesão de EM no paciente 600 com SLE.
 > 
-> Na imagem 4 podemos observar a predição do paciente 600 que possui Lúpus Eritematoso Sistêmico, o modelo concluiu que a lesão era do tipo desmielinizantes (EM).
+> Na imagem 4 podemos observar a predição do paciente 600, que possui Lúpus Eritematoso Sistêmico. O modelo concluiu que a lesão era do tipo desmielinizantes (EM).
 > 
-> Após analisarmos as imagens de ressonância do cérebro de 77 pacientes com Lúpus Eritematoso Sistêmico temos o seguinte histograma.
+> Após analisarmos as imagens de ressonância do cérebro de 77 pacientes com Lúpus Eritematoso Sistêmico, temos o seguinte histograma:
 > 
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.8.png)
 >
 > Imagem 5: Histograma.
 > 
-> Como podemos analisar atravez do histograma todas as imagens de ressonância do cérebro de pacientes com SLE tiverem apontaram para lesões do tipo desmielinizantes (EM).
+> Como podemos analisar através do histograma, todas as imagens de ressonância do cérebro de pacientes com SLE apontaram para lesões do tipo desmielinizantes (EM).
 > 
 > A maioria com a seguinte porcentagem de probabilidade de cada tipo de lesão:
 > * AVC = 21.43356181692244%;
@@ -225,11 +225,13 @@
 >
 # Conclusão
 >
-> Podemos concluir atravez dos dados fornecidos desta amostra que a etiologia mais provável, possuindo Lúpus Eritematoso Sistêmico, são lesões desmielinizantes comparado a ter lesões isquêmicas.
+> Através deste projeto, foi possível utilizar um classificador treinado com imagens de ressonância do cérebro a fim de diferenciar e classificar lesões isquêmicas e desmielinizantes, identificando qual é a etiologia mais provável das lesões presentes em pacientes de Lúpus Eritematoso Sistêmico (LES).
 > 
-> Desafios encontrados: Um dos principais desafios foi interpretar os dados encontrados e entender o objetivo do projeto, além da parte técnica, falta de memória em disco, o que impossibilitou do modelo avaliar 100% as imagens do treinamento.
+> Após a realização do mesmo, podemos concluir, através dos dados fornecidos desta amostra, que a etiologia de maior probabilidade, quando se possuí Lúpus Eritematoso Sistêmico, são lesões desmielinizantes quando se comparado a ter lesões isquêmicas.
+> 
+> Desafios encontrados: Um dos principais desafios foi interpretar os dados encontrados e entender o objetivo do projeto, além da parte técnica, onde foram encontrados problemas como falta de memória em disco, o que impossibilitou do modelo avaliar 100% as imagens do treinamento.
 >
-> Trabalhos Futuros: poderia ser feito normalização, uso das máscaras e outros pré-processamentos, uma melhor divisão dos dados de treino e dos dados de teste e também seria interessante utilizar de outros métodos de classifição para observar seus desempenho em relação a acurácia e ao tempo de processamento.
+> Trabalhos Futuros: poderia ser realizada a normalização dos dados, o uso das máscaras e outros pré-processamentos, bem como uma melhor divisão dos dados de treino e dados de teste. Também, seria interessante utilizar outros métodos de classifição, a fim de observar seus respectivos desempenhos em relação a acurácia e ao tempo de processamento.
 
 
 # Referências Bibliográficas
