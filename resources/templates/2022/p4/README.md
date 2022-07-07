@@ -127,20 +127,20 @@
 > 
 > O melhores paramêtros encontrados pelo GrindSearchCV foram: {'C': 10, 'gamma': 0.0001, 'kernel': 'rbf'}
 >
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.2.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.2.png)
 >
 > Tabela 1: Métricas de avaliação do gridsearch. 
 > 
 > A coluna 'params' da tabela 1 traz os possíveis valores principais paramêtros do SVM. A coluna 'rank_test_score' classifica todas as combinações de parâmetros pelos valores de 'mean_test_score'.
 > A coluna principal é 'mean_test_score'. Esta é a média correta de precisão da classificação.
 >
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.png)
 >
 > Tabela 2: Comparação de amostra dos dados previstos com os dados reais.
 > 
 > A Tabela 2 faz a comparação dos dados previstos com os dados reais, e as células em vermelho marcam 2 lesões que foram previstas de forma incorreta. Foram previstas como lesões isquêmicas (AVC), mas eram lesões desmielinizantes (EM).
 > 
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/matriz%20de%20confusao.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/matriz%20de%20confusao.png)
 >
 > Tabela 3: Matriz de confusão
 >
@@ -161,7 +161,7 @@
 >  
 > A seguir, analisaremos algumas informações úteis que podemos tirar da matriz de confusão.
 >
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.3.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.3.png)
 >
 > Tabela 5: Tabela de métricas do modelo.
 >
@@ -183,19 +183,19 @@
 >
 # Resultados Obtidos e Discussão
 >
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.6.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.6.png)
 >
 > Imagem 1: Predição de uma lesão de EM feita corretamente.
 > 
 > A imagem 1 mostra a predição correta de uma lesão desmielinizantes (EM).
 > 
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.7.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.7.png)
 >
 > Imagem 2: Predição de uma lesão de AVC feita incorretamente.
 >
 > Já a imagem 2 mostra uma predição incorreta. Nela, o modelo previu que seria uma lesão desmielinizantes (EM), porém era uma lesão isquêmicas (AVC). Quando o modelo erra ele aprende com seu erro, os corrige, e não repete o mesmo erro novamente.
 >
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.5.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.5.png)
 >
 > Imagem 3: Gráfico AUC ROC.
 >
@@ -205,7 +205,7 @@
 > 
 > Portanto, podemos concluir que o modelo consegue distinguir de forma razoável (AUC = 0.94) os tipos de lesões de AVC e EM. Porém, ainda possui dificuldades, e não é 100% preciso em sua previsão.
 > 
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.4.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.4.png)
 >
 > Imagem 4: Predição de uma lesão de EM no paciente 600 com SLE.
 > 
@@ -213,7 +213,7 @@
 > 
 > Após analisarmos as imagens de ressonância do cérebro de 77 pacientes com Lúpus Eritematoso Sistêmico, temos o seguinte histograma:
 > 
-![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.8.png)
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/assets/p4.8.png)
 >
 > Imagem 5: Histograma.
 > 
