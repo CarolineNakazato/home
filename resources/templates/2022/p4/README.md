@@ -158,6 +158,16 @@ Para criar tal modelo, é necessário passar pelas seguintes fases:
 >
 > * F-score: Já o f-score nos mostra o balanço entre a precisão e o recall de nosso modelo. 
 >
+> * Macro Average:  é calculada usando a média aritmética (também conhecida como média não ponderada) de todas as pontuações F1 por classe. Esse método trata todas as classes igualmente, independentemente de seus valores de suporte.
+> 
+> * Weighted Average: é calculada tomando a média de todas as pontuações da F1 por classe, considerando o suporte de cada classe.
+> O suporte refere-se ao número de ocorrências reais da classe no conjunto de dados. Por exemplo, o valor de suporte de 1 em Boat significa que há apenas uma observação com um rótulo real de Boat.
+> O ‘peso’ refere-se essencialmente à proporção do suporte de cada classe em relação à soma de todos os valores de suporte.
+> Com a média ponderada, a média de saída teria levado em conta a contribuição de cada classe ponderada pelo número de exemplos dessa determinada classe.
+> 
+> Micro Average:  calcula uma pontuação F1 média global contando as somas dos verdadeiros positivos (TP), falsos negativos (FN) e falsos positivos (FP).
+> Primeiro somamos os respectivos valores de TP, FP e FN em todas as classes e, em seguida, os conectamos à equação F1 para obter nossa pontuação micro F1.
+> 
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.6.png)
 >
 > Imagem 1: Predição de uma lesão de EM feita corretamente.
@@ -170,25 +180,33 @@ Para criar tal modelo, é necessário passar pelas seguintes fases:
 >
 # Resultados Obtidos e Discussão
 >
+![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.4.png)
+>
+> Imagem 3: Predição de uma lesão de EM no paciente 600 com SLE.
+> 
+> Todos as imagens de pessoas com SLE tiverem apontaram para lesões EM.
+> 
+> A maioria com a seguinte porcentagem de probabilidade de cada tipo de lesão:
+> * AVC = 21.43356181692244%
+> * EM = 78.56643818307757%
+> 
 # Conclusão
 >
 ![alt text](https://github.com/CarolineNakazato/home/blob/master/resources/templates/2022/p4/p4.5.png)
 >
-> Imagem 3: Gráfico AUC ROC.
+> Imagem 4: Gráfico AUC ROC.
 >
 > Um gráfico AUC ROC (Area Under the Curve Receiver Operating Characteristics) é usado para visualizar o desempenho de um modelo entre sensibilidade e especificidade. A sensibilidade refere-se à capacidade de identificar corretamente as entradas que se enquadram no tipo correto da lesão. A especificidade refere-se à capacidade de identificar corretamente as entradas que se enquadram em um verdadeiro negativo (TN) . Dito de outra forma, um gráfico AUC ROC identifica quão bem o modelo é capaz de distinguir entre as classes.
 > 
 > Uma pontuação AUC de 1 significa que o modelo pode distinguir com precisão entre as lesões 100% das vezes. Uma pontuação de 0,5 significa que o modelo não pode determinar entre os tipo de lesão, o que não ocorreu neste modelo. A curva ROC é o gráfico da taxa de verdadeiros positivos do modelo em relação à taxa de falsos positivos.
 > 
-> Portanto podemos concluir que o modelo consegue distinguir muito bem SLE dos outros 2 tipos de lesões (AVC e EM), porem ainda possui dificuldade em distinguir entre as lesões AVC e EM.
+> Portanto podemos concluir que o modelo consegue distinguir de forma razoável (AUC = 0.98) os tipos de lesões AVC e EM, porem ainda possui dificuldade não é exato.
 >
 > Um dos principais desafios foi interpretar os dados encontrados e entender o objetivo do projeto.
 >
 > Principais lições aprendidas.
 >
-> Trabalhos Futuros:
-> 
-> Poderia ser feito normalização, uso das máscaras e outros pré-processamentos, uma melhor divisão dos dados de treino e dos dados de teste e também seria interessante utilizar de outros métodos de classifição para observar seus desempenho em relação a acurácia e ao tempo de processamento.
+> Trabalhos Futuros: poderia ser feito normalização, uso das máscaras e outros pré-processamentos, uma melhor divisão dos dados de treino e dos dados de teste e também seria interessante utilizar de outros métodos de classifição para observar seus desempenho em relação a acurácia e ao tempo de processamento.
 
 
 # Referências Bibliográficas
